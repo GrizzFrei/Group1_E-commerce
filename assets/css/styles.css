@@ -1,0 +1,276 @@
+body {
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.landing-page {
+    text-align: center;
+    padding: 2em;
+    background-color: #f4f4f4;
+}
+
+/* Main Navigation */
+.main-nav {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    border-bottom: 2px solid #666; 
+}
+
+.main-nav .logo {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: white;
+}
+
+.main-nav .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    flex-grow: 1; 
+    justify-content: center;
+}
+
+.main-nav .nav-links li {
+    margin-right: 1em;
+    position: relative;
+}
+
+.main-nav .nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    position: relative; 
+}
+
+.main-nav .nav-links li a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0); 
+    transform-origin: bottom left;
+    transition: transform 0.3s ease;
+}
+
+.main-nav .nav-links li a:hover::after {
+    transform: scaleX(1); 
+}
+
+.main-nav .nav-end {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav .cart {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+.main-nav .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 1em; 
+}
+
+.main-nav .dropbtn {
+    color: white;
+    padding: 0.5em 1em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.main-nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%; 
+    right: 0; 
+}
+
+.main-nav .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.main-nav .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.main-nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Filter Navigation */
+.filter-nav {
+    background-color: #ddd;
+    padding: 1em;
+}
+
+.filter-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-nav ul li {
+    position: relative;
+    margin-right: 1em;
+}
+
+.filter-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5em 1em;
+}
+
+.filter-nav ul li a:hover {
+    background-color: #bbb;
+}
+
+.filter-nav ul .dropdown {
+    position: relative;
+}
+
+.filter-nav ul .dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.filter-nav ul .dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.filter-nav ul .dropdown .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.filter-nav ul .dropdown .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.filter-nav ul .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* CSS for Products Display */
+.products-section {
+    padding: 2em;
+    background-color: #fff;
+}
+
+.products-section h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin: 1em;
+    width: calc(25% - 2em);
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1em;
+}
+
+.product .sale {
+    color: red;
+    text-decoration: line-through;
+}
+
+/* For Simple Responsive */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav ul li {
+        margin: 0.5em 0;
+    }
+
+    .filter-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-nav ul li {
+        margin: 0.5em 0;
+    }
+
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 80%;
+    }
+
+    .signup-section {
+        padding: 1em;
+    }
+
+    .signup-form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-nav .logo {
+        font-size: 1.2em;
+    }
+
+    .main-nav ul li {
+        margin: 0.3em 0;
+    }
+
+    .product {
+        width: 95%;
+    }
+
+    .signup-form {
+        padding: 1em;
+    }
+}

@@ -1,0 +1,87 @@
+.signup-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('background.jpg') no-repeat center center/cover;
+}
+
+.signup-form {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 2em;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.signup-form h2 {
+    margin-bottom: 1em;
+}
+
+.signup-form label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.signup-form input,
+.signup-form select {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+}
+
+.signup-form .name-fields,
+.signup-form .info-fields,
+.signup-form .address-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.signup-form .name-fields > div,
+.signup-form .info-fields > div,
+.signup-form .address-fields > div {
+    flex: 1;
+}
+
+.signup-form .name-fields label,
+.signup-form .info-fields label {
+    margin-bottom: 0.5em;
+}
+
+.signup-form button {
+    background-color: #333;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.signup-form button:hover {
+    background-color: #555;
+}
+
+.signin-link {
+    margin-top: 1em;
+    text-align: center;
+    width: 100%;
+}
+
+.signin-link a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signin-link a:hover {
+    text-decoration: underline;
+}
