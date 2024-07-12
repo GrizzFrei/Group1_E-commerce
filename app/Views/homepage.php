@@ -16,14 +16,14 @@
         <h2>Hot Products</h2>
         <div class="products">
             <div class="product">
-                <img src="path/to/image1.jpg" alt="Product 1">
-                <h3>Product 1</h3>
+                <img src=<?=base_url("assets/images/light2.jpg")?> alt="Product 1">
+                <h3>Party Lights</h3>
                 <p>$10.00</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="path/to/image2.jpg" alt="Product 2">
-                <h3>Product 2</h3>
+                <img src=<?=base_url("assets/images/balloon5.jpg")?> alt="Product 2">
+                <h3>Forest Balloon</h3>
                 <p>$20.00</p>
                 <button>Add to Cart</button>
             </div>
@@ -35,14 +35,14 @@
         <h2>Products on Sale</h2>
         <div class="products">
             <div class="product">
-                <img src="path/to/image3.jpg" alt="Product 3">
-                <h3>Product 3</h3>
+                <img src=<?=base_url("assets/images/cake4.jpg")?> alt="Product 3">
+                <h3>Disco Cake</h3>
                 <p>$10.00 <span class="sale">$15.00</span></p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="path/to/image4.jpg" alt="Product 4">
-                <h3>Product 4</h3>
+                <img src=<?=base_url("assets/images/favors1.jpg")?> alt="Product 4">
+                <h3>Tea Loot Bags</h3>
                 <p>$18.00 <span class="sale">$25.00</span></p>
                 <button>Add to Cart</button>
             </div>
@@ -54,14 +54,14 @@
         <h2>New Products</h2>
         <div class="products">
             <div class="product">
-                <img src="path/to/image5.jpg" alt="Product 5">
-                <h3>Product 5</h3>
+                <img src=<?=base_url("assets/images/decor4.jpg")?> alt="Product 5">
+                <h3>Thomas & Friends Theme</h3>
                 <p>$30.00</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="path/to/image6.jpg" alt="Product 6">
-                <h3>Product 6</h3>
+                <img src=<?=base_url("assets/images/costume3.jpg")?> alt="Product 6">
+                <h3>Family Mime Costume Set</h3>
                 <p>$40.00</p>
                 <button>Add to Cart</button>
             </div>
