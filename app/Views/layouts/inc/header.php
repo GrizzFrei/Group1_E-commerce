@@ -6,5 +6,6 @@
     <title>Simple E-Commerce</title>
     <link href=<?=base_url('assets/css/styles.css');?> rel="stylesheet">
     <link href=<?=base_url('assets/css/contact.css');?> rel="stylesheet">
+    <link href=<?=base_url('assets/css/about.css');?> rel="stylesheet">
 </head>
 <body>
