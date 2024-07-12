@@ -29,5 +29,9 @@ return view('about');
     return view('signup');
 >>>>>>> Stashed changes
     }
+    public function allProducts()
+    {
+        return view('allProducts');
+    }
 
 }
