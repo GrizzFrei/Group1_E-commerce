@@ -14,9 +14,20 @@ class Home extends BaseController
     return view('contact');
     }
 
+<<<<<<< Updated upstream
     public function about() 
     {
 return view('about');
+=======
+    public function login()
+    {
+    return view('login');
+    }
+
+    public function signup()
+    {
+    return view('signup');
+>>>>>>> Stashed changes
     }
 
 }
