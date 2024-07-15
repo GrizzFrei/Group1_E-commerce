@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-
+use App\Models\ProductsModel;
 class Home extends BaseController
 {
     public function index()
@@ -30,7 +30,9 @@ class Home extends BaseController
 
     public function allProducts()
     {
-        return view('allProducts');
+        $productsModel = new ProductsModel();
+        $productsData['products'] = $productsModel->find();
+        return view('allProducts', $productsData);
     }
 
     public function cart()
@@ -45,8 +47,11 @@ class Home extends BaseController
 
     public function getProduct($category)
     {
-        $data['product'] = array(0 => array('category' => $category));
-        return view('specificproducts', $data);
+        //$data['product'] = array(0 => array('category' => $category));
+        $productsModel = new ProductsModel();
+        $productsQuery = $productsModel->where('product_identifier', $category);
+        $productsData['products'] = $productsQuery->findAll();
+        return view('specificproducts', $productsData);
     }
 
 

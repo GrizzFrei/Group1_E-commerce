@@ -5,19 +5,25 @@
     <?= $this->include('layouts/inc/filter-nav') ?>
     
         <section class="products-section">
-        <h2><?=ucfirst($product[0]['category'])?></h2>
-                <div class="products">
-                <?php for ($j = 1; $j <= 4; $j++):?>
-                    <!-- Product Card -->
-                    <div class="product">
-                        <img src="<?=base_url('assets/images/'.$product[0]['category'].$j.'.jpg')?>" alt="Product Name">
-                        <h3><?=ucfirst($product[0]['category']).' '.$j?></h3>
-                        <p class="price">$29.99</p>
-                        <button>Add to Cart</button>
+        
+                    <div class="products">
+                        <?php $ctr = 1;?>
+                    <?php foreach($products as $productData):?>
+                        <?php 
+                            if($ctr > 4)
+                                $ctr = 1;
+                        ?>
+                        <!-- Product Card -->
+                        <div class="product">
+                            <img src="<?=base_url('assets/images/'.$productData['product_identifier'].$ctr.'.jpg')?>" alt="Product Name">
+                            <h3><?=ucfirst($productData['product_name'])?></h3>
+                            <p class="price"><?=$productData['product_price']?></p>
+                            <button>Add to Cart</button>
+                        </div>
+                        <?php $ctr++;?>
+                        <?php endforeach; ?>
                     </div>
-                <?php endfor;?>
-                </div>
-            
+        
         </section>
     
 

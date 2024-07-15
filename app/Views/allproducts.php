@@ -7,22 +7,26 @@
 <?= $this->section('content') ?>
     <?= $this->include('layouts/inc/main-nav') ?>
 
-    <?php for ($i = 0; $i < 9; $i++):?>
         <section class="products-section">
-        <h2><?=ucfirst($productList[$i])?></h2>
                 <div class="products">
-                    <?php for ($j = 1; $j <= 4; $j++):?>
+                    <?php $ctr = 1;?>
+                    <?php foreach($products as $productsData):?>
+                        <?php 
+                            if($ctr > 4)
+                                $ctr = 1;
+                        ?>
                     <!-- Product Card -->
+                     
                     <div class="product">
-                        <img src="<?=base_url('assets/images/'.$productList[$i].$j.'.jpg')?>" alt="Product Name">
-                        <h3><?=ucfirst($productList[$i]).' '.$j?></h3>
-                        <p class="price">$29.99</p>
+                        <img src="<?=base_url('assets/images/'.$productsData['product_identifier'].$ctr.'.jpg')?>" alt="Product Name">
+                        <h3><?=$productsData['product_name']?></h3>
+                        <p class="price"><?=$productsData['product_price']?></p>
                         <button>Add to Cart</button>
                     </div>
-                    <?php endfor;?>
+                    <?php $ctr++;?>
+                    <?php endforeach;?>
                 </div>
             
         </section>
-    <?php endfor;?>
 
 <?= $this->endSection() ?>

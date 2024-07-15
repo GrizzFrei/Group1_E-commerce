@@ -22,3 +22,9 @@ $routes->get('cart', 'Home::cart');
 $routes->get('checkout', 'Home::checkout');
 
 $routes->get('getProduct/(:any)', 'Home::getProduct/$1');
+
+$routes->post('registerCheck', 'Validation::register');
+
+$routes->post('loginCheck', 'Validation::login');
+
+$routes->get('logout', 'Validation::logout');

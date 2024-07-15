@@ -5,18 +5,18 @@ signup.php
     <?= $this->include('layouts/inc/main-nav') ?>
 
     <section class="signup-section">
-        <form action="#" method="post" class="signup-form">
+        <form action=<?=base_url('registerCheck')?> method="post" class="signup-form">
             <h2>Create an Account</h2>
 
             <div class="name-fields">
                 <div>
-                    <label for="firstname">First Name:</label>
-                    <input type="text" id="firstname" name="firstname" required>
+                    <label for="fName">First Name:</label>
+                    <input type="text" id="firstname" name="fName" required>
                 </div>
                 
                 <div>
-                    <label for="surname">Surname:</label>
-                    <input type="text" id="surname" name="surname" required>
+                    <label for="lName">Surname:</label>
+                    <input type="text" id="surname" name="lName" required>
                 </div>
             </div>
 
@@ -26,8 +26,11 @@ signup.php
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <label for="pass">Password:</label>
+            <input type="password" id="password" name="pass" required>
+
+            <label for="password">Confirm Password:</label>
+            <input type="password" id="password" name="confirmPass" required>
             
             <div class="info-fields">
                 <div>
@@ -45,8 +48,8 @@ signup.php
                     </select>
                 </div>
                 <div>
-                    <label for="contact">Contact Number:</label>
-                    <input type="tel" id="contact" name="contact" required>
+                    <label for="cNum">Contact Number:</label>
+                    <input type="tel" id="contact" name="cNum" required>
                 </div>
             </div>
 
@@ -59,7 +62,7 @@ signup.php
                     <input type="text" id="city" name="city" placeholder="City" required>
                 </div>
                 <div>
-                    <input type="text" id="zip" name="zip" placeholder="Zip Code" required>
+                    <input type="text" id="zip" name="zCode" placeholder="Zip Code" required>
                 </div>
             </div>
             
@@ -67,7 +70,7 @@ signup.php
         </form>
         
         <div class="signin-link">
-            <p>Already have an account? <a href=<?=base_url("signup")?>>Sign In</a></p>
+            <p>Already have an account? <a href=<?=base_url("login")?>>Login</a></p>
         </div>
     </section>
 

@@ -7,12 +7,23 @@
             <li><a href=<?=base_url('about')?>>About</a></li>
             <li><a href="<?= base_url('contact');?>">Contact</a></li>
         </ul>
-        <a href=<?=base_url('cart')?> class="cart1">Cart</a>
+        <?php if(session()->has('id')):?>
+            <a href=<?=base_url('cart')?> class="cart1">Cart</a>
+            <?php else:?>
+                <a href=<?=base_url('login')?> class="cart1">Cart</a> 
+        <?php endif;?>
         <div class="dropdown">
-            <a href=<?=base_url('login')?> class="dropbtn">Account</a>
-            <div class="dropdown-content">
-                <a href="#">Logout</a>
-                <a href="#">Edit Profile</a>
-            </div>
+            <?php if(!session()->has('id')):?>
+                <a href=<?=base_url('login')?> class="dropbtn">Account</a>
+                
+                <?php else:?>
+                    <a href="#" class="dropbtn">Welcome, <?=session()->get('username')?></a>
+                    <div class="dropdown-content">
+                    <a href=<?=base_url('logout')?>>Logout</a>
+                    </div>
+                
+            <?php endif;?>
+            
+            
         </div>
     </nav>
