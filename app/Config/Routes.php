@@ -28,3 +28,7 @@ $routes->post('registerCheck', 'Validation::register');
 $routes->post('loginCheck', 'Validation::login');
 
 $routes->get('logout', 'Validation::logout');
+
+$routes->post('addToCart', 'CartCont::addToCart');
+
+$routes->get('delete/(:num)', 'CartCont::deleteFromCart/$1');

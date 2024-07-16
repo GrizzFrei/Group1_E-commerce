@@ -18,10 +18,16 @@
                     <!-- Product Card -->
                      
                     <div class="product">
-                        <img src="<?=base_url('assets/images/'.$productsData['product_identifier'].$ctr.'.jpg')?>" alt="Product Name">
-                        <h3><?=$productsData['product_name']?></h3>
-                        <p class="price"><?=$productsData['product_price']?></p>
-                        <button>Add to Cart</button>
+                        <form action=<?=base_url('addToCart')?> method="post">
+                            <img src="<?=base_url('assets/images/'.$productsData['product_identifier'].$ctr.'.jpg')?>" alt="Product Name" style="width:auto; height:400px;">
+                            <h3><?=$productsData['product_name']?></h3>
+                            <p class="price"><?=$productsData['product_price']?></p>
+                            <input type="hidden" name="product_id" value=<?=$productsData['product_id']?>>
+                            <input type="hidden" name="product_identifier" value=<?=$productsData['product_identifier']?>>
+                            <input type="hidden" name="product_price" value=<?=$productsData['product_price']?>>
+                            <input type="hidden" name="product_name" value=<?=$productsData['product_name']?>>
+                            <button type="submit">Add to Cart</button>
+                        </form>
                     </div>
                     <?php $ctr++;?>
                     <?php endforeach;?>

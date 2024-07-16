@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\ProductsModel;
+use App\Models\CartModel;
 class Home extends BaseController
 {
     public function index()
@@ -37,7 +38,10 @@ class Home extends BaseController
 
     public function cart()
     {
-        return view('cart');
+        $cartModel = new CartModel();
+        $cartQuery = $cartModel->where('user_id', session('id'));
+        $cartData['cartProducts'] = $cartQuery->findAll();
+        return view('cart', $cartData);
     }
 
     public function checkout()

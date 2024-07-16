@@ -7,24 +7,24 @@ login.php
     <div class="cart-body">
         <div class="cart">
             <h1>Shopping Cart</h1>
-            <div class="cart-item">
-                <img src=<?=base_url("assets/images/light2.jpg")?> alt="Item 1">
-                <div class="item-details">
-                    <h2>Light 2</h2>
-                    <p>$10.00</p>
-                    <button class="remove-btn">Remove</button>
+            <?php $total = 0;?>
+            <?php foreach($cartProducts as $products):?>
+                <div class="cart-item">
+                    <?php 
+                        $tempId = fmod($products['product_id'], 4);
+                        $picId = $tempId == 0 ? $tempId+4 : $tempId;
+                        $total += $products['product_price'];
+                    ?>
+                    <img src=<?=base_url('assets/images/'.$products['product_identifier'].$picId.'.jpg')?> alt="Item 1">
+                    <div class="item-details">
+                        <h2><?=$products['product_name']?></h2>
+                        <p><?='$'.$products['product_price']?></p>
+                        <a class="remove-btn" href=<?=base_url('delete/'.$products['cart_id'])?>>Remove</a>
+                    </div>
                 </div>
-            </div>
-            <div class="cart-item">
-                <img src=<?=base_url("assets/images/balloon5.jpg")?> alt="Item 2">
-                <div class="item-details">
-                    <h2>Balloon 5</h2>
-                    <p>$20.00</p>
-                    <button class="remove-btn">Remove</button>
-                </div>
-            </div>
+            <?php endforeach;?>
             <div class="total">
-                <h2>Total: $30.00</h2>
+                <h2>Total: $<?=$total?></h2>
                 <a href=<?=base_url("checkout")?> class="checkout-btn">Checkout</a>
             </div>
         </div>
